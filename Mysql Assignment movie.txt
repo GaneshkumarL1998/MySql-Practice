@@ -1,0 +1,45 @@
+Ques 1:
+	SELECT mov_title, mov_year
+	FROM movie;
+Ques 2:
+	SELECT mov_year
+	FROM movie
+	WHERE mov_title='American Beauty';
+Ques 3:
+	SELECT mov_title
+	FROM movie
+	WHERE mov_year=1999;
+Ques 4:
+	SELECT mov_title
+	FROM movie
+	WHERE mov_year<1998;
+Ques 5:
+	SELECT movie.mov_title
+	FROM movie
+	UNION
+	SELECT reviewer.rev_name
+	FROM reviewer;
+Ques 6:
+	SELECT m.rev_name
+	FROM reviewer m INNER JOIN rating r
+	ON m.rev_id=r.rev_id
+	WHERE r.rev_stars>=7 AND m.rev_name IS NOT NULL;
+Ques 7:
+	SELECT m.mov_title
+	FROM movie m LEFT JOIN rating r
+	ON m.mov_id=r.mov_id
+	WHERE r.rev_id IS NULL;
+Ques 8:
+	SELECT m.mov_title
+	FROM movie m 
+	WHERE m.mov_id IN (905, 907, 917);
+Ques 9:
+	SELECT mov_id, mov_title, mov_year
+	FROM movie
+	WHERE mov_title LIKE '%Boogie%Nights%'
+	ORDER BY mov_year ASC;
+Ques 10:
+	SELECT act_id
+	FROM actor 
+	WHERE act_fname='Woody' 
+	AND act_lname='Allen';
